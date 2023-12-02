@@ -1,9 +1,5 @@
-// --- Day 1: Test ---
+// --- Day 1: Trebuchet?! ---
 // https://adventofcode.com/2023/day/1
-
-import 'dart:io';
-
-final input = File('test/data/2023/day01.txt').readAsLinesSync();
 
 int partOne(Iterable<String> input) {
   var sum = 0;
@@ -25,13 +21,11 @@ String evalNumber(String input) {
     return '0';
   }
 
-  // If the first character is a digit, return it.
   if (isNumeric(input[0])) {
     return input[0];
   }
 
-  // Otherwise, attempt to parse the first word as a number.
-  const englishNumberStrings = [
+  const numberStrings = [
     'zero',
     'one',
     'two',
@@ -43,13 +37,12 @@ String evalNumber(String input) {
     'eight',
     'nine'
   ];
-  for (var i = 0; i < englishNumberStrings.length; i++) {
-    if (input.startsWith(englishNumberStrings[i])) {
+  for (var i = 0; i < numberStrings.length; i++) {
+    if (input.startsWith(numberStrings[i])) {
       return i.toString();
     }
   }
 
-  // If the first word is not a number, return 0.
   return '0';
 }
 
@@ -79,8 +72,4 @@ int partTwo(Iterable<String> input) {
 
 bool isNumeric(String s) {
   return '0123456789'.contains(s);
-}
-
-void main() {
-  print(partTwo(input));
 }

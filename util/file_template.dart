@@ -1,5 +1,8 @@
 import 'dart:io';
 
+// dart util util/file_template.dart (day in int) (title in string)
+// dart util util/file_template.dart 1 "Trebuchet?!"
+
 var year = DateTime.now().year.toString();
 
 void main(List<String> args) {
@@ -19,7 +22,11 @@ void main(List<String> args) {
 // --- Day $dayNumber: $dayTitle ---
 // https://adventofcode.com/$year/day/$dayNumber
 
-int solveA(Iterable<String> input) {
+int partOne(Iterable<String> input) {
+  return 0;
+}
+
+int partTwo(Iterable<String> input) {
   return 0;
 }
 ''',
@@ -39,21 +46,36 @@ int solveA(Iterable<String> input) {
 
 import 'dart:io';
 import 'package:advent_of_code/$dayFileName';
+import 'package:advent_of_code/util.dart';
 import 'package:test/test.dart';
 
 final input = File('$dataPath').readAsLinesSync();
 
 void main() {
   group('Part One', () {
-    test('Example 1', () {
+    test('Example', () {
       expect(
-          solveA(const [
-            '<someLine>',
-          ]),
+          partOne(
+            '''
+    '''
+                .asLines),
           equals(-1));
     });
     test('Solution', () {
-      expect(solveA(input), equals(-1));
+      expect(partOne(input), equals(-1));
+    });
+  });
+  group('Part Two', () {
+    test('Example', () {
+      expect(
+          partTwo(
+            '''
+    '''
+                .asLines),
+          equals(-1));
+    });
+    test('Solution', () {
+      expect(partTwo(input), equals(-1));
     });
   });
 }
