@@ -1,10 +1,7 @@
 // --- Day 2: Cube Conundrum ---
 // https://adventofcode.com/2023/day/2
 
-import 'dart:io';
 import 'dart:math';
-
-final input = File('test/data/2023/day02.txt').readAsLinesSync();
 
 int partOne(Iterable<String> input) {
   var fulfilledGameNums = <int>[];
@@ -81,8 +78,4 @@ int partTwo(Iterable<String> input) {
     power += maxBlue * maxRed * maxGreen;
   }
   return power;
-}
-
-void main() {
-  print(partTwo(input));
 }
