@@ -1,12 +1,6 @@
 // --- Day 4: Scratchcards ---
 // https://adventofcode.com/2023/day/4
 
-import 'dart:io';
-
-import 'package:advent_of_code/util.dart';
-
-final input = File('test/data/2023/day04.txt').readAsLinesSync();
-
 int partOne(Iterable<String> input) {
   var inputList = input.toList();
   var totalPoints = 0;
@@ -87,8 +81,4 @@ int partTwo(Iterable<String> input) {
 
 bool isNumeric(String s) {
   return int.tryParse(s) != null;
-}
-
-void main() {
-  print(partTwo(input));
 }
